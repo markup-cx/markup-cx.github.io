@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Roadmap - Markup++</title>
+		<meta name="description" content="Markup++ converts Markdown, and eventually AsciiDoc and reStructuredText, to HTML through a small C++17 library and CLI.">
+		<link rel="stylesheet" href="assets/style.css">
+		<script src="assets/site.js" defer></script>
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
+		<header class="site-header">
+			<a class="brand" href="./"><span class="mark">M++</span><span>Markup++</span></a>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+			<nav id="site-nav" aria-label="Primary">
+				<a href="./docs.html">Docs</a>
+				<a href="./markdown.html">Markdown</a>
+				<a href="./roadmap.html">Roadmap</a>
+				<a href="https://github.com/nift-dev/markup">GitHub</a>
+			</nav>
+		</header>
+		<main id="main"><section class="page-hero"><p class="eyebrow">ROADMAP</p><h1>Three syntaxes. One careful boundary.</h1><p>Each format gets its own compatibility target and evidence. Shared HTML output does not mean pretending the source languages are the same.</p></section>
+                  
+                  <section class="timeline">
+                    <article class="active"><span>M0</span><div><h2>Markdown foundation</h2><p>Standalone library and CLI, useful everyday syntax, safe file behavior, raw/safe modes and adversarial testing.</p></div><b>Current</b></article>
+                    <article><span>M1</span><div><h2>Markdown compatibility</h2><p>Official CommonMark corpus, complete delimiter rules, nested/loose lists, references, HTML blocks and explicit extension profiles.</p></div></article>
+                    <article><span>M2</span><div><h2>AsciiDoc</h2><p>A bounded, documented compatibility profile covering the most useful structural syntax before advanced macros and extensions.</p></div></article>
+                    <article><span>M3</span><div><h2>reStructuredText</h2><p>A docutils-informed target with directives and includes treated as capability boundaries, not just syntax.</p></div></article>
+                    <article><span>M4</span><div><h2>Nift embedding</h2><p>Mirror the approved standalone subtree, enforce synchronization, then add explicit dependency and conversion-order integration tests.</p></div></article>
+                  </section></main>
+		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
+	</body>
+</html>

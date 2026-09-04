@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Markup++ - markup to HTML</title>
+		<meta name="description" content="Markup++ converts Markdown, and eventually AsciiDoc and reStructuredText, to HTML through a small C++17 library and CLI.">
+		<link rel="stylesheet" href="assets/style.css">
+		<script src="assets/site.js" defer></script>
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
+		<header class="site-header">
+			<a class="brand" href="./"><span class="mark">M++</span><span>Markup++</span></a>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+			<nav id="site-nav" aria-label="Primary">
+				<a href="./docs.html">Docs</a>
+				<a href="./markdown.html">Markdown</a>
+				<a href="./roadmap.html">Roadmap</a>
+				<a href="https://github.com/nift-dev/markup">GitHub</a>
+			</nav>
+		</header>
+		<main id="main"><section class="hero">
+                    <p class="eyebrow">MARKUP IN. CLEAN HTML OUT.</p>
+                    <h1>One small converter.<br><span>More than one syntax.</span></h1>
+                    <p class="lede">Markup++ is a dependency-free C++17 library and CLI for converting Markdown, AsciiDoc and reStructuredText to HTML. The first development checkpoint starts with Markdown.</p>
+                    <div class="actions">
+                      <a class="button primary" href="./docs.html">Get started</a>
+                      <a class="button" href="https://github.com/nift-dev/markup">View source</a>
+                    </div>
+                  </section>
+                  
+                  <section class="terminal" aria-label="Markup++ command example">
+                    <div class="terminal-bar"><span></span><span></span><span></span><b>terminal</b></div>
+                    <pre><code>$ markup README.md -o README.html
+# or stream a fragment
+$ markup README.md &gt; fragment.html</code></pre>
+                  </section>
+                  
+                  <section class="feature-grid" aria-label="Highlights">
+                    <article><span>01</span><h2>Native and focused</h2><p>A compact library with no runtime dependencies and a thin command-line interface.</p></article>
+                    <article><span>02</span><h2>Built to embed</h2><p>String-in, string-out conversion behind a narrow API, ready for future Nift integration.</p></article>
+                    <article><span>03</span><h2>Honest formats</h2><p>Markdown works now. AsciiDoc and reStructuredText fail clearly until their converters land.</p></article>
+                    <article><span>04</span><h2>Safe file behavior</h2><p>Atomic output, permission preservation, and refusal to overwrite input files or output symlinks.</p></article>
+                  </section>
+                  
+                  <section class="split-section">
+                    <div><p class="eyebrow">LIBRARY FIRST</p><h2>A clean boundary for tools.</h2></div>
+                    <div><p>Markup++ does not know about project graphs, templates or files. Give it markup and a format; receive HTML or a controlled error.</p><pre><code>std::string html, error;
+markup::convert(
+    markup::Format::Markdown,
+    source, html, error);</code></pre></div>
+                  </section>
+                  
+                  <section class="status-strip"><strong>Development checkpoint 0.1.0</strong><span>Useful Markdown subset</span><span>10,000 deterministic mutation cases</span><span>No premature CommonMark claim</span></section></main>
+		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Documentation - Markup++</title>
+		<meta name="description" content="Markup++ converts Markdown, and eventually AsciiDoc and reStructuredText, to HTML through a small C++17 library and CLI.">
+		<link rel="stylesheet" href="assets/style.css">
+		<script src="assets/site.js" defer></script>
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
+		<header class="site-header">
+			<a class="brand" href="./"><span class="mark">M++</span><span>Markup++</span></a>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+			<nav id="site-nav" aria-label="Primary">
+				<a href="./docs.html">Docs</a>
+				<a href="./markdown.html">Markdown</a>
+				<a href="./roadmap.html">Roadmap</a>
+				<a href="https://github.com/nift-dev/markup">GitHub</a>
+			</nav>
+		</header>
+		<main id="main"><section class="page-hero"><p class="eyebrow">DOCUMENTATION</p><h1>Convert your first document.</h1><p>Build with any C++17 compiler, then send HTML to stdout or an explicit output file.</p></section>
+                  
+                  <div class="docs-layout">
+                    <aside><strong>On this page</strong><a href="#build">Build</a><a href="#cli">CLI</a><a href="#library">Library API</a><a href="#safety">Safety</a></aside>
+                    <article class="prose">
+                      <h2 id="build">Build</h2>
+                      <pre><code>git clone https://github.com/nift-dev/markup.git
+cd markup
+make
+make test</code></pre>
+                      <p>The only build requirement is a C++17 compiler and Make. The resulting executable is <code>markup</code>.</p>
+                  
+                      <h2 id="cli">CLI</h2>
+                      <pre><code>markup README.md
+markup README.md -o README.html
+markup --standalone --title "Project notes" notes.md -o notes.html
+printf '# Hello\n' | markup --format markdown -</code></pre>
+                      <p>Output is an HTML fragment by default. Use <code>--standalone</code> for a minimal HTML5 document. Input from stdin requires <code>--format</code> because there is no filename extension to inspect.</p>
+                  
+                      <h2 id="library">Library API</h2>
+                      <pre><code>#include &lt;markup/Markup.h&gt;
+
+std::string html;
+std::string error;
+markup::Options options;
+
+bool ok = markup::convert(
+    markup::Format::Markdown,
+    source,
+    html,
+    error,
+    options);</code></pre>
+                      <p>The public API performs no file IO and owns no global mutable state. That separation is what will let Nift embed Markup++ without coupling the converter to Nift internals.</p>
+                  
+                      <h2 id="safety">Raw HTML and safe mode</h2>
+                      <p>Raw HTML passes through by default, as users commonly expect from Markdown. <code>--safe</code> escapes raw HTML and rejects active URL schemes. It is a conservative rendering option, not a complete sanitizer for hostile content.</p>
+                      <pre><code>markup --safe comments.md -o comments.html</code></pre>
+                    </article>
+                  </div></main>
+		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
+	</body>
+</html>
