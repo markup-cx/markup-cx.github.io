@@ -15,7 +15,9 @@ for page in index docs markdown roadmap; do
 done
 
 grep -F 'markup README.md -o README.html' public/index.html >/dev/null
-grep -F 'Full CommonMark conformance' public/markdown.html >/dev/null
+grep -F '652/652' public/markdown.html >/dev/null
+grep -F 'markup --extensions' public/markdown.html >/dev/null
+grep -F 'Cross-platform CI gate pending' public/index.html >/dev/null
 grep -F 'AsciiDoc' public/roadmap.html >/dev/null
 grep -F 'reStructuredText' public/roadmap.html >/dev/null
 grep -F 'Nift embedding' public/roadmap.html >/dev/null
