@@ -1,0 +1,24 @@
+{
+  "tracked": [
+    {
+      "name": "/",
+      "title": "Markup++ - markup to HTML",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "docs",
+      "title": "Documentation - Markup++",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "markdown",
+      "title": "Markdown support - Markup++",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "roadmap",
+      "title": "Roadmap - Markup++",
+      "template": "templates/template.html"
+    }
+  ]
+}

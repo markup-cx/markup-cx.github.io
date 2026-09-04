@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		@input("templates/head.html")
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
+		<header class="site-header">
+			<a class="brand" href="@pathto('/')"><span class="mark">M++</span><span>Markup++</span></a>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+			<nav id="site-nav" aria-label="Primary">
+				<a href="@pathto('docs')">Docs</a>
+				<a href="@pathto('markdown')">Markdown</a>
+				<a href="@pathto('roadmap')">Roadmap</a>
+				<a href="https://github.com/nift-dev/markup">GitHub</a>
+			</nav>
+		</header>
+		<main id="main">@content</main>
+		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
+	</body>
+</html>

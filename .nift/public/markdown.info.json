@@ -1,0 +1,27 @@
+{
+  "name": "markdown",
+  "title": "Markdown support - Markup++",
+  "template": "templates/template.html",
+  "content": "content/markdown.html",
+  "output": "public/markdown.html",
+  "minify": false,
+  "minify-version": 0,
+  "pagination": false,
+  "pagination-items-per-page": 0,
+  "pagination-template": "",
+  "pagination-separator": "",
+  "pagination-pages": 0,
+  "dependencies": [
+    "content/markdown.html",
+    "templates/head.html",
+    "templates/template.html"
+  ],
+  "reqs": [
+    "public/assets/site.js",
+    "public/assets/style.css",
+    "public/docs.html",
+    "public/index.html",
+    "public/markdown.html",
+    "public/roadmap.html"
+  ]
+}
