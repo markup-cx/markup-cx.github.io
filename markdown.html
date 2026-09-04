@@ -20,26 +20,28 @@
 				<a href="https://github.com/nift-dev/markup">GitHub</a>
 			</nav>
 		</header>
-		<main id="main"><section class="page-hero"><p class="eyebrow">FORMAT 01</p><h1>Markdown, without inflated claims.</h1><p>The first checkpoint covers the syntax people use in ordinary project documentation. Full CommonMark conformance remains deliberate future work.</p></section>
-                  
+		<main id="main"><section class="page-hero"><p class="eyebrow">FORMAT 01</p><h1>CommonMark, measured.</h1><p>Markdown defaults to the CommonMark 0.31.2 profile. The pinned official corpus passes 652/652 locally through the same public API used by the CLI and future embedders.</p></section>
                   <section class="support-grid">
-                    <article><h2>Blocks</h2><ul><li>ATX and Setext headings</li><li>Paragraphs and breaks</li><li>Block quotes</li><li>Ordered and unordered lists</li><li>Task lists</li><li>Fenced and indented code</li><li>Thematic breaks</li><li>Pipe tables and alignment</li></ul></article>
-                    <article><h2>Inline</h2><ul><li>Emphasis and strong emphasis</li><li>Strikethrough</li><li>Code spans</li><li>Links and images</li><li>URL and email autolinks</li><li>Entities and escapes</li><li>Optional raw HTML</li></ul></article>
-                    <article class="caution"><h2>Not claimed yet</h2><ul><li>Complete CommonMark conformance</li><li>Nested and loose list fidelity</li><li>Reference links and footnotes</li><li>Full delimiter-run semantics</li><li>Complete HTML block rules</li><li>Heading identifiers</li></ul></article>
+                    <article><h2>Core blocks</h2><ul><li>ATX and Setext headings</li><li>Paragraphs and breaks</li><li>Nested block quotes</li><li>Tight and loose lists</li><li>Fenced and indented code</li><li>All seven HTML block forms</li></ul></article>
+                    <article><h2>Core inline</h2><ul><li>Delimiter-stack emphasis</li><li>Code spans</li><li>Inline and reference links</li><li>Images and autolinks</li><li>Entities and escapes</li><li>Inline raw HTML</li></ul></article>
+                    <article class="caution"><h2>Release claim gate</h2><p>The complete local corpus, sanitizer, pathological-input, differential and performance gates pass. The final public compliance wording waits for the first successful Linux, macOS and Windows Actions run.</p></article>
                   </section>
-                  
+                  <section class="split-section">
+                    <div><p class="eyebrow">EXPLICIT EXTENSIONS</p><h2>Core stays predictable.</h2></div>
+                    <div><p>Pipe tables, task-list checkboxes and strikethrough are useful, but they are not CommonMark core. Enable the legacy extension profile deliberately:</p><pre><code>markup --extensions notes.md -o notes.html</code></pre></div>
+                  </section>
                   <section class="example-pair">
                     <div><p class="eyebrow">INPUT</p><pre><code># Release notes
 
 Markup++ keeps **conversion** small.
 
-- native C++17
+- CommonMark by default
 - fragment or standalone HTML
 - future Nift embedding</code></pre></div>
                     <div><p class="eyebrow">OUTPUT</p><pre><code>&lt;h1&gt;Release notes&lt;/h1&gt;
 &lt;p&gt;Markup++ keeps &lt;strong&gt;conversion&lt;/strong&gt; small.&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;native C++17&lt;/li&gt;
+  &lt;li&gt;CommonMark by default&lt;/li&gt;
   &lt;li&gt;fragment or standalone HTML&lt;/li&gt;
   &lt;li&gt;future Nift embedding&lt;/li&gt;
 &lt;/ul&gt;</code></pre></div>

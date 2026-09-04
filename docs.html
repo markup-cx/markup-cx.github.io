@@ -20,7 +20,7 @@
 				<a href="https://github.com/nift-dev/markup">GitHub</a>
 			</nav>
 		</header>
-		<main id="main"><section class="page-hero"><p class="eyebrow">DOCUMENTATION</p><h1>Convert your first document.</h1><p>Build with any C++17 compiler, then send HTML to stdout or an explicit output file.</p></section>
+		<main id="main"><section class="page-hero"><p class="eyebrow">DOCUMENTATION</p><h1>Convert your first document.</h1><p>Build with C++17 and C99 compilers, then send HTML to stdout or an explicit output file.</p></section>
                   
                   <div class="docs-layout">
                     <aside><strong>On this page</strong><a href="#build">Build</a><a href="#cli">CLI</a><a href="#library">Library API</a><a href="#safety">Safety</a></aside>
@@ -30,14 +30,15 @@
 cd markup
 make
 make test</code></pre>
-                      <p>The only build requirement is a C++17 compiler and Make. The resulting executable is <code>markup</code>.</p>
+                      <p>The build requires C++17 and C99 compilers plus Make. The resulting executable is <code>markup</code>; the CommonMark engine is built from vendored source rather than a system library.</p>
                   
                       <h2 id="cli">CLI</h2>
                       <pre><code>markup README.md
 markup README.md -o README.html
 markup --standalone --title "Project notes" notes.md -o notes.html
+markup --extensions README.md -o extended.html
 printf '# Hello\n' | markup --format markdown -</code></pre>
-                      <p>Output is an HTML fragment by default. Use <code>--standalone</code> for a minimal HTML5 document. Input from stdin requires <code>--format</code> because there is no filename extension to inspect.</p>
+                      <p>Output is an HTML fragment and Markdown uses the CommonMark profile by default. Use <code>--extensions</code> for legacy tables, task lists and strikethrough, or <code>--standalone</code> for a minimal HTML5 document. Input from stdin requires <code>--format</code> because there is no filename extension to inspect.</p>
                   
                       <h2 id="library">Library API</h2>
                       <pre><code>#include &lt;markup/Markup.h&gt;
@@ -55,7 +56,7 @@ bool ok = markup::convert(
                       <p>The public API performs no file IO and owns no global mutable state. That separation is what will let Nift embed Markup++ without coupling the converter to Nift internals.</p>
                   
                       <h2 id="safety">Raw HTML and safe mode</h2>
-                      <p>Raw HTML passes through by default, as users commonly expect from Markdown. <code>--safe</code> escapes raw HTML and rejects active URL schemes. It is a conservative rendering option, not a complete sanitizer for hostile content.</p>
+                      <p>Raw HTML passes through by default, as CommonMark specifies. <code>--safe</code> prevents raw HTML pass-through and rejects active URL schemes. It is a conservative rendering option, not a complete sanitizer for hostile content.</p>
                       <pre><code>markup --safe comments.md -o comments.html</code></pre>
                     </article>
                   </div></main>
