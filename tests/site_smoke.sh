@@ -19,7 +19,9 @@ grep -F 'markup README.md -o README.html' public/index.html >/dev/null
 grep -F '652/652' public/markdown.html >/dev/null
 grep -F 'markup --extensions' public/markdown.html >/dev/null
 grep -F 'Cross-platform CI passing' public/index.html >/dev/null
-grep -F 'AD0-AD5' public/asciidoc.html >/dev/null
+grep -F 'AD0-AD11' public/asciidoc.html >/dev/null
+grep -F '13 current alpha TCK inputs' public/asciidoc.html >/dev/null
+grep -F 'explicit host resolver' public/docs.html >/dev/null
 grep -F 'markup guide.adoc -o guide.html' public/asciidoc.html >/dev/null
 grep -F 'AsciiDoc' public/roadmap.html >/dev/null
 grep -F 'reStructuredText' public/roadmap.html >/dev/null

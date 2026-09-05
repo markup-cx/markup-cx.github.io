@@ -33,9 +33,10 @@ This project uses Nift as part of its website build process.
   `.nift/tracked.json`.
 - Markdown is CommonMark 0.31.2 compliant; pushed Actions run `33933214625`
   passed on Linux, macOS and Windows at Markup++ commit `3cba857`.
-- AsciiDoc is implemented through AD5 against pinned unreleased Eclipse
-  specification/TCK snapshots. Do not call it conformant until AD6-AD11 and the
-  ASG gate pass. reStructuredText remains planned.
+- AsciiDoc AD0-AD11 is complete against pinned unreleased Eclipse
+  specification/TCK snapshots. Describe this as the completed pinned development
+  profile, not stable conformance: the alpha TCK has no published expected-ASG
+  oracle. Asciidoctor compatibility and reStructuredText remain separate work.
 - The visual identity is charcoal, warm grey and amber. Do not introduce blue,
   gradients or generic framework styling.
 - Build with the supplied/approved Nift binary and require `nift status` to
