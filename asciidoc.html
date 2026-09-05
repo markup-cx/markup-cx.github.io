@@ -21,17 +21,17 @@
 				<a href="https://github.com/nift-dev/markup">GitHub</a>
 			</nav>
 		</header>
-		<main id="main"><section class="page-hero"><p class="eyebrow">FORMAT 02</p><h1>AsciiDoc, checkpointed.</h1><p>Useful conversion has landed through AD0-AD5 against immutable Eclipse language and TCK development snapshots. The upstream standard and TCK are still unreleased, so this is measured progress rather than a premature conformance claim.</p></section>
+		<main id="main"><section class="page-hero"><p class="eyebrow">FORMAT 02</p><h1>AsciiDoc, checkpointed.</h1><p>The AD0-AD11 pinned development profile is complete against immutable Eclipse language and TCK snapshots. The upstream standard and TCK remain unreleased, so this is precise development-profile evidence rather than a stable conformance claim.</p></section>
                   
                   <section class="support-grid">
                     <article><h2>Document structure</h2><ul><li>Titles and author/revision metadata</li><li>Attribute assignment and unsetting</li><li>Nested sections</li><li>Paragraph and block precedence</li><li>Source-positioned neutral nodes</li></ul></article>
                     <article><h2>Blocks and lists</h2><ul><li>Listing, literal and source blocks</li><li>Open, example and sidebar containers</li><li>Quotes, verse and comments</li><li>Ordered, unordered and description lists</li><li>Nested checklists and continuations</li></ul></article>
-                    <article><h2>Inline substitutions</h2><ul><li>Strong, emphasis and monospace</li><li>Constrained and unconstrained forms</li><li>Mark, superscript and subscript</li><li>Escaping and replacements</li><li>Explicit line breaks</li></ul></article>
+                    <article><h2>References and resources</h2><ul><li>Links, anchors and cross-references</li><li>Images, icons and built-in macros</li><li>Bounded pipe tables</li><li>Attribute conditionals</li><li>Explicit host-resolved includes</li></ul></article>
                   </section>
                   
                   <section class="split-section">
                     <div><p class="eyebrow">CURRENT BOUNDARY</p><h2>Implemented, not overstated.</h2></div>
-                    <div><p>Links, media, tables, macros, includes, resource policies and the final ASG-based TCK gate remain in AD6-AD11. Asciidoctor compatibility is a separate future evidence track.</p><pre><code>markup guide.adoc -o guide.html
+                    <div><p>All 13 current alpha TCK inputs pass the reproducible AD11 gate with no exclusions. The upstream snapshot has not published its expected ASG oracle, so stable language conformance awaits a future released-spec upgrade. Asciidoctor compatibility remains a separate evidence track.</p><pre><code>markup guide.adoc -o guide.html
 printf '= Guide\n' | markup --format asciidoc -</code></pre></div>
                   </section>
                   
@@ -42,7 +42,7 @@ printf '= Guide\n' | markup --format asciidoc -</code></pre></div>
 == {project}
 
 * [x] Parse structure
-* [ ] Complete AD6-AD11</code></pre></div>
+* [x] Complete AD6-AD11</code></pre></div>
                     <div><p class="eyebrow">OUTPUT</p><pre><code>&lt;div id="header"&gt;
   &lt;h1&gt;Project guide&lt;/h1&gt;
 &lt;/div&gt;
