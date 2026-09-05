@@ -36,9 +36,10 @@ This project uses Nift as part of its website build process.
 - AsciiDoc AD0-AD11 is complete against pinned unreleased Eclipse
   specification/TCK snapshots. Describe this as the completed pinned development
   profile, not stable conformance: the alpha TCK has no published expected-ASG
-  oracle. AC0-AC9 and RST0-RST14 have completed their local implementation
-  gates; exact Asciidoctor 2.0.26 and Docutils 0.23 compatibility wording awaits
-  pushed Linux/macOS/Windows candidate evidence.
+  oracle. AC0-AC9 and RST0-RST14 completed their bounded compatibility gates at
+  `ee0ec00`, Actions run `33938717946`, with Linux, macOS, Windows and libFuzzer
+  green. Always publish the pinned Asciidoctor 2.0.26 / Docutils 0.23 profiles
+  and limitations beside those claims.
 - The visual identity is charcoal, warm grey and amber. Do not introduce blue,
   gradients or generic framework styling.
 - Build with the supplied/approved Nift binary and require `nift status` to
