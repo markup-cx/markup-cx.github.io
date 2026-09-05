@@ -4,7 +4,7 @@ set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
 
-for page in index docs markdown asciidoc roadmap; do
+for page in index docs markdown asciidoc restructuredtext roadmap; do
     test -s "public/$page.html"
     grep -F '<meta name="viewport"' "public/$page.html" >/dev/null
     grep -F 'assets/style.css' "public/$page.html" >/dev/null
@@ -12,17 +12,20 @@ for page in index docs markdown asciidoc roadmap; do
     grep -F 'href="./docs.html"' "public/$page.html" >/dev/null
     grep -F 'href="./markdown.html"' "public/$page.html" >/dev/null
     grep -F 'href="./asciidoc.html"' "public/$page.html" >/dev/null
+    grep -F 'href="./restructuredtext.html"' "public/$page.html" >/dev/null
     grep -F 'href="./roadmap.html"' "public/$page.html" >/dev/null
 done
 
 grep -F 'markup README.md -o README.html' public/index.html >/dev/null
 grep -F '652/652' public/markdown.html >/dev/null
 grep -F 'markup --extensions' public/markdown.html >/dev/null
-grep -F 'Cross-platform CI passing' public/index.html >/dev/null
+grep -F 'RST0-RST14 implemented' public/index.html >/dev/null
 grep -F 'AD0-AD11' public/asciidoc.html >/dev/null
 grep -F '13 current alpha TCK inputs' public/asciidoc.html >/dev/null
 grep -F 'explicit host resolver' public/docs.html >/dev/null
 grep -F 'markup guide.adoc -o guide.html' public/asciidoc.html >/dev/null
+grep -F 'Docutils 0.23' public/restructuredtext.html >/dev/null
+grep -F 'markup manual.rst -o manual.html' public/restructuredtext.html >/dev/null
 grep -F 'AsciiDoc' public/roadmap.html >/dev/null
 grep -F 'reStructuredText' public/roadmap.html >/dev/null
 grep -F 'Nift embedding' public/roadmap.html >/dev/null

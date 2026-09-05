@@ -21,6 +21,11 @@
       "template": "templates/template.html"
     },
     {
+      "name": "restructuredtext",
+      "title": "reStructuredText support - Markup++",
+      "template": "templates/template.html"
+    },
+    {
       "name": "roadmap",
       "title": "Roadmap - Markup++",
       "template": "templates/template.html"

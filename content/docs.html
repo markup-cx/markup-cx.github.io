@@ -16,8 +16,9 @@ markup README.md -o README.html
 markup --standalone --title "Project notes" notes.md -o notes.html
 markup --extensions README.md -o extended.html
 markup guide.adoc -o guide.html
+markup manual.rst -o manual.html
 printf '# Hello\n' | markup --format markdown -</code></pre>
-    <p>Output is an HTML fragment. Markdown uses CommonMark by default, while <code>.adoc</code> and <code>.asciidoc</code> select the completed AD0-AD11 pinned AsciiDoc development profile. Use <code>--extensions</code> for legacy Markdown tables, task lists and strikethrough, or <code>--standalone</code> for a minimal HTML5 document. Input from stdin requires <code>--format</code>.</p>
+    <p>Output is an HTML fragment. Markdown uses CommonMark by default; <code>.adoc</code>/<code>.asciidoc</code> select AsciiDoc and <code>.rst</code> selects reStructuredText. Use <code>--extensions</code> for legacy Markdown tables, task lists and strikethrough, or <code>--standalone</code> for a minimal HTML5 document. Input from stdin requires <code>--format</code>.</p>
 
     <h2 id="library">Library API</h2>
     <pre><code>#include &lt;markup/Markup.h&gt;
@@ -32,7 +33,7 @@ bool ok = markup::convert(
     html,
     error,
     options);</code></pre>
-    <p>The public API performs no file IO and owns no global mutable state. AsciiDoc includes require an explicit host resolver that returns content and a canonical dependency identity; without one, includes fail safely. That separation lets Nift embed Markup++ and connect included files to its dependency graph without ambient filesystem access.</p>
+    <p>The public API performs no file IO and owns no global mutable state. AsciiDoc and reStructuredText includes require explicit host resolvers that return content and canonical dependency identities. That separation lets Nift embed Markup++ without granting the converter ambient filesystem access.</p>
 
     <h2 id="safety">Raw HTML and safe mode</h2>
     <p>Raw HTML passes through by default, as CommonMark specifies. <code>--safe</code> prevents raw HTML pass-through and rejects active URL schemes. It is a conservative rendering option, not a complete sanitizer for hostile content.</p>

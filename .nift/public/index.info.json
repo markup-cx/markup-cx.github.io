@@ -23,6 +23,7 @@
     "public/docs.html",
     "public/index.html",
     "public/markdown.html",
+    "public/restructuredtext.html",
     "public/roadmap.html"
   ]
 }
