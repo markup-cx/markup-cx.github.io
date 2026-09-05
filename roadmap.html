@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Roadmap - Markup++</title>
-		<meta name="description" content="Markup++ converts Markdown, and eventually AsciiDoc and reStructuredText, to HTML through a small C++17 library and CLI.">
+		<meta name="description" content="Markup++ converts CommonMark and AsciiDoc to HTML through a small C++17 library and CLI, with reStructuredText planned.">
 		<link rel="stylesheet" href="assets/style.css">
 		<script src="assets/site.js" defer></script>
 	</head>
@@ -16,6 +16,7 @@
 			<nav id="site-nav" aria-label="Primary">
 				<a href="./docs.html">Docs</a>
 				<a href="./markdown.html">Markdown</a>
+				<a href="./asciidoc.html">AsciiDoc</a>
 				<a href="./roadmap.html">Roadmap</a>
 				<a href="https://github.com/nift-dev/markup">GitHub</a>
 			</nav>
@@ -24,8 +25,8 @@
                   
                   <section class="timeline">
                     <article><span>M0</span><div><h2>Markdown foundation</h2><p>Standalone library and CLI, safe file behavior, raw/safe modes and adversarial testing.</p></div><b>Complete</b></article>
-                    <article class="active"><span>M1</span><div><h2>CommonMark release candidate</h2><p>652/652 official examples locally, explicit extension profiles, pathological and performance guards, with the first pushed cross-platform CI run still required.</p></div><b>Current</b></article>
-                    <article><span>M2</span><div><h2>AsciiDoc</h2><p>A bounded, documented compatibility profile covering the most useful structural syntax before advanced macros and extensions.</p></div></article>
+                    <article><span>M1</span><div><h2>CommonMark 0.31.2</h2><p>652/652 official examples, explicit extension profiles, pathological/performance guards and pushed Linux, macOS and Windows evidence.</p></div><b>Complete</b></article>
+                    <article class="active"><span>M2</span><div><h2>AsciiDoc</h2><p>AD0-AD5 implement the pinned target, neutral model, document structure, blocks, lists and inline substitutions. AD6-AD11 remain.</p></div><b>Current</b></article>
                     <article><span>M3</span><div><h2>reStructuredText</h2><p>A docutils-informed target with directives and includes treated as capability boundaries, not just syntax.</p></div></article>
                     <article><span>M4</span><div><h2>Nift embedding</h2><p>Mirror the approved standalone subtree, enforce synchronization, then add explicit dependency and conversion-order integration tests.</p></div></article>
                   </section></main>
