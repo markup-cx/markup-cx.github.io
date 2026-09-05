@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>reStructuredText support - Markup++</title>
+		<meta name="description" content="Markup++ converts CommonMark and AsciiDoc to HTML through a small C++17 library and CLI, with reStructuredText planned.">
+		<link rel="stylesheet" href="assets/style.css">
+		<script src="assets/site.js" defer></script>
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
+		<header class="site-header">
+			<a class="brand" href="./"><span class="mark">M++</span><span>Markup++</span></a>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+			<nav id="site-nav" aria-label="Primary">
+				<a href="./docs.html">Docs</a>
+				<a href="./markdown.html">Markdown</a>
+				<a href="./asciidoc.html">AsciiDoc</a>
+				<a href="./restructuredtext.html">reStructuredText</a>
+				<a href="./roadmap.html">Roadmap</a>
+				<a href="https://github.com/nift-dev/markup">GitHub</a>
+			</nav>
+		</header>
+		<main id="main"><section class="page-hero"><p class="eyebrow">FORMAT 03</p><h1>reStructuredText, deliberately bounded.</h1><p>RST0-RST14 are implemented against a frozen Docutils 0.23 oracle. The parser, capability boundary and deterministic renderer are complete locally; the exact compatibility claim awaits a pushed Linux, macOS and Windows candidate.</p></section>
+                  
+                  <section class="support-grid">
+                    <article><h2>Core documents</h2><ul><li>Sections, paragraphs and transitions</li><li>Literal, quoted, line and doctest blocks</li><li>Lists, fields and definition structures</li><li>Simple and grid tables</li><li>Source-positioned neutral nodes</li></ul></article>
+                    <article><h2>Links and transforms</h2><ul><li>Targets and named references</li><li>Footnotes and citations</li><li>Text substitutions and comments</li><li>Standard interpreted roles</li><li>Stable diagnostics</li></ul></article>
+                    <article><h2>Capabilities</h2><ul><li>Standard directive registry</li><li>IO-free library default</li><li>Host-resolved includes</li><li>Canonical dependency identities</li><li>Raw content disabled</li></ul></article>
+                  </section>
+                  
+                  <section class="split-section">
+                    <div><p class="eyebrow">PINNED PROFILE</p><h2>Docutils 0.23, measured honestly.</h2></div>
+                    <div><p>The frozen oracle uses the standalone reader, reStructuredText parser and HTML5 writer with raw and file insertion disabled. Twenty-four reference cases retain doctree, fragment and diagnostic evidence. Sphinx extensions are outside this profile.</p><pre><code>markup manual.rst -o manual.html
+printf 'Heading\n=======\n' | markup --format rst -</code></pre></div>
+                  </section></main>
+		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
+	</body>
+</html>

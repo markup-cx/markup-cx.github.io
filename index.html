@@ -17,6 +17,7 @@
 				<a href="./docs.html">Docs</a>
 				<a href="./markdown.html">Markdown</a>
 				<a href="./asciidoc.html">AsciiDoc</a>
+				<a href="./restructuredtext.html">reStructuredText</a>
 				<a href="./roadmap.html">Roadmap</a>
 				<a href="https://github.com/nift-dev/markup">GitHub</a>
 			</nav>
@@ -24,7 +25,7 @@
 		<main id="main"><section class="hero">
                     <p class="eyebrow">MARKUP IN. CLEAN HTML OUT.</p>
                     <h1>One small converter.<br><span>More than one syntax.</span></h1>
-                    <p class="lede">Markup++ is a self-contained C++17 library and CLI for converting Markdown, AsciiDoc and reStructuredText to HTML. Markdown is CommonMark 0.31.2 compliant; the pinned AsciiDoc development profile is complete through AD11.</p>
+                    <p class="lede">Markup++ is a self-contained C++17 library and CLI for converting Markdown, AsciiDoc and reStructuredText to HTML. Markdown is CommonMark 0.31.2 compliant; the AsciiDoc and Docutils profiles have completed local implementation gates.</p>
                     <div class="actions">
                       <a class="button primary" href="./docs.html">Get started</a>
                       <a class="button" href="https://github.com/nift-dev/markup">View source</a>
@@ -41,7 +42,7 @@ $ markup README.md &gt; fragment.html</code></pre>
                   <section class="feature-grid" aria-label="Highlights">
                     <article><span>01</span><h2>Native and focused</h2><p>A compact library with no runtime dependencies, a source-vendored CommonMark engine and a thin command-line interface.</p></article>
                     <article><span>02</span><h2>Built to embed</h2><p>String-in, string-out conversion behind a narrow API, ready for future Nift integration.</p></article>
-                    <article><span>03</span><h2>Measured formats</h2><p>CommonMark passes all 652 official examples and its cross-platform release gate. AsciiDoc progress is tied to pinned Eclipse language and TCK snapshots.</p></article>
+                    <article><span>03</span><h2>Measured formats</h2><p>CommonMark passes all 652 official examples and its cross-platform release gate. AsciiDoc and reStructuredText progress is tied to pinned upstream profiles and explicit publication gates.</p></article>
                     <article><span>04</span><h2>Safe file behavior</h2><p>Atomic output, permission preservation, and refusal to overwrite input files or output symlinks.</p></article>
                   </section>
                   
@@ -53,7 +54,7 @@ markup::convert(
     source, html, error);</code></pre></div>
                   </section>
                   
-                  <section class="status-strip"><strong>Development checkpoint 0.1.0</strong><span>CommonMark 0.31.2 compliant</span><span>AsciiDoc AD0-AD11 complete</span><span>Cross-platform CI passing</span></section></main>
+                  <section class="status-strip"><strong>Development checkpoint 0.1.0</strong><span>CommonMark 0.31.2 compliant</span><span>AsciiDoc AD0-AD11 / AC0-AC9</span><span>RST0-RST14 implemented</span></section></main>
 		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
 	</body>
 </html>
