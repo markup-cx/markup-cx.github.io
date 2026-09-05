@@ -17,6 +17,7 @@
     "templates/template.html"
   ],
   "reqs": [
+    "public/asciidoc.html",
     "public/assets/site.js",
     "public/assets/style.css",
     "public/docs.html",

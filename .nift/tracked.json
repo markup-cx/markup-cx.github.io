@@ -16,6 +16,11 @@
       "template": "templates/template.html"
     },
     {
+      "name": "asciidoc",
+      "title": "AsciiDoc support - Markup++",
+      "template": "templates/template.html"
+    },
+    {
       "name": "roadmap",
       "title": "Roadmap - Markup++",
       "template": "templates/template.html"

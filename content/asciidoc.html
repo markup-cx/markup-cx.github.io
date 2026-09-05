@@ -1,0 +1,30 @@
+<section class="page-hero"><p class="eyebrow">FORMAT 02</p><h1>AsciiDoc, checkpointed.</h1><p>Useful conversion has landed through AD0-AD5 against immutable Eclipse language and TCK development snapshots. The upstream standard and TCK are still unreleased, so this is measured progress rather than a premature conformance claim.</p></section>
+
+<section class="support-grid">
+  <article><h2>Document structure</h2><ul><li>Titles and author/revision metadata</li><li>Attribute assignment and unsetting</li><li>Nested sections</li><li>Paragraph and block precedence</li><li>Source-positioned neutral nodes</li></ul></article>
+  <article><h2>Blocks and lists</h2><ul><li>Listing, literal and source blocks</li><li>Open, example and sidebar containers</li><li>Quotes, verse and comments</li><li>Ordered, unordered and description lists</li><li>Nested checklists and continuations</li></ul></article>
+  <article><h2>Inline substitutions</h2><ul><li>Strong, emphasis and monospace</li><li>Constrained and unconstrained forms</li><li>Mark, superscript and subscript</li><li>Escaping and replacements</li><li>Explicit line breaks</li></ul></article>
+</section>
+
+<section class="split-section">
+  <div><p class="eyebrow">CURRENT BOUNDARY</p><h2>Implemented, not overstated.</h2></div>
+  <div><p>Links, media, tables, macros, includes, resource policies and the final ASG-based TCK gate remain in AD6-AD11. Asciidoctor compatibility is a separate future evidence track.</p><pre><code>markup guide.adoc -o guide.html
+printf '= Guide\n' | markup --format asciidoc -</code></pre></div>
+</section>
+
+<section class="example-pair">
+  <div><p class="eyebrow">INPUT</p><pre><code>= Project guide
+:project: Markup++
+
+== {project}
+
+* [x] Parse structure
+* [ ] Complete AD6-AD11</code></pre></div>
+  <div><p class="eyebrow">OUTPUT</p><pre><code>&lt;div id="header"&gt;
+  &lt;h1&gt;Project guide&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+  &lt;h2&gt;Markup++&lt;/h2&gt;
+  ...
+&lt;/div&gt;</code></pre></div>
+</section>

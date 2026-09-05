@@ -31,10 +31,11 @@ This project uses Nift as part of its website build process.
 - CSS and JavaScript are untracked static assets owned directly in
   `public/assets/`; do not duplicate them under `content/` or add them to
   `.nift/tracked.json`.
-- The current product checkpoint implements Markdown only. Its default profile
-  passes all 652 CommonMark 0.31.2 examples locally, but the final compliance
-  claim remains gated on pushed Linux/macOS/Windows CI. AsciiDoc and
-  reStructuredText remain planned.
+- Markdown is CommonMark 0.31.2 compliant; pushed Actions run `33933214625`
+  passed on Linux, macOS and Windows at Markup++ commit `3cba857`.
+- AsciiDoc is implemented through AD5 against pinned unreleased Eclipse
+  specification/TCK snapshots. Do not call it conformant until AD6-AD11 and the
+  ASG gate pass. reStructuredText remains planned.
 - The visual identity is charcoal, warm grey and amber. Do not introduce blue,
   gradients or generic framework styling.
 - Build with the supplied/approved Nift binary and require `nift status` to
