@@ -32,7 +32,7 @@
                   
                   <section class="split-section">
                     <div><p class="eyebrow">PINNED PROFILE</p><h2>Docutils 0.23, measured honestly.</h2></div>
-                    <div><p>The frozen oracle uses the standalone reader, reStructuredText parser and HTML5 writer with raw and file insertion disabled. Twenty-four reference cases retain doctree, fragment and diagnostic evidence. Sphinx extensions are outside this profile.</p><pre><code>markup manual.rst -o manual.html
+                    <div><p>The frozen oracle uses the standalone reader, reStructuredText parser and HTML5 writer with raw and file insertion disabled. Twenty-four reference cases retain doctree, fragment and diagnostic evidence. The release gate compares normalized Markup++ output against the pinned fragment and fails on unexpected differences; recorded differences are reviewed with reasons. Sphinx extensions are outside this profile.</p><pre><code>markup manual.rst -o manual.html
 printf 'Heading\n=======\n' | markup --format rst -</code></pre></div>
                   </section></main>
 		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
