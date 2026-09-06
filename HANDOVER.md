@@ -55,12 +55,6 @@ Do not introduce Nift-specific machinery where ordinary web tooling is the clear
   copies first, deploy all four, and verify their live bytes before the
   standalone release rehearsal.
 
-Nift is the project's build-time templating and dependency layer. It does not determine what the website is about or what other technologies the project should use.
-
-Keep the existing project architecture and use the project's normal HTML, CSS, JavaScript, frameworks, backend, and other tooling where appropriate.
-
-Do not introduce Nift-specific machinery where ordinary web tooling is the clearer solution.
-
 ## Start here
 
 Before making substantial changes:
