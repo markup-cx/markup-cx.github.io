@@ -1,5 +1,5 @@
 # HANDOVER.md
-v0.0.6
+v0.0.7
 
 This is a living handover for working effectively in a Nift project.
 
@@ -21,6 +21,12 @@ If this project has project-specific additions, preserve or reapply them when
 updating the canonical handover.
 
 This project uses Nift as part of its website build process.
+
+Nift is the project's build-time templating and dependency layer. It does not determine what the website is about or what other technologies the project should use.
+
+Keep the existing project architecture and use the project's normal HTML, CSS, JavaScript, frameworks, backend, and other tooling where appropriate.
+
+Do not introduce Nift-specific machinery where ordinary web tooling is the clearer solution.
 
 ## Markup++ website identity
 
@@ -144,6 +150,29 @@ literal output rather than something Nift should execute or resolve.
 
 @input('templates/footer.html')
 ```
+
+### Structured JSON and markup sources
+
+Use name-first `@json` when a template needs immutable structured data:
+
+```text
+@json(name, path)
+@json(name, schema-path, path)
+@json(name, schema-name, path)
+@json(name){...}
+@json(name, schema-path){...}
+@json(name, schema-name){...}
+```
+
+Inline bodies are evaluated as Nift templates before JSON parsing. A schema
+name refers to an earlier JSON binding. Data and schema files are automatic
+dependencies and paths must stay inside the project.
+
+Use `@markup(format){...}` or `@markup(format, path)` for Markdown (`md`),
+AsciiDoc (`adoc`) or reStructuredText (`rst`). Nift evaluates template syntax in
+the source first, Markup++ converts it once, and the resulting HTML is appended
+without being parsed as Nift syntax again. File sources and host-resolved
+AsciiDoc/RST includes are automatic dependencies.
 
 `@pathto(...)` creates project-aware links to tracked pages and local assets.
 
