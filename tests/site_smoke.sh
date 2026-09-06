@@ -16,10 +16,16 @@ for page in index docs markdown asciidoc restructuredtext roadmap; do
     grep -F 'href="./roadmap.html"' "public/$page.html" >/dev/null
 done
 
+for script in install download update uninstall; do
+    test -s "$script"
+    cmp "$script" "public/$script"
+    sh -n "$script"
+done
+
 grep -F 'markup README.md -o README.html' public/index.html >/dev/null
 grep -F '652/652' public/markdown.html >/dev/null
 grep -F 'markup --extensions' public/markdown.html >/dev/null
-grep -F 'RST0-RST14 implemented' public/index.html >/dev/null
+grep -F 'Docutils 0.23 core profile passed' public/index.html >/dev/null
 grep -F 'AD0-AD11' public/asciidoc.html >/dev/null
 grep -F '13 current alpha TCK inputs' public/asciidoc.html >/dev/null
 grep -F 'explicit host resolver' public/docs.html >/dev/null

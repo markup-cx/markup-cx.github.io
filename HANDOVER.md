@@ -44,6 +44,10 @@ This project uses Nift as part of its website build process.
   gradients or generic framework styling.
 - Build with the supplied/approved Nift binary and require `nift status` to
   report every tracked page current before committing.
+- Root `install`, `download`, `update` and `uninstall` files are copied
+  byte-for-byte from Markup++ `packaging/`. Commit their generated `public/`
+  copies first, deploy all four, and verify their live bytes before the
+  standalone release rehearsal.
 
 Nift is the project's build-time templating and dependency layer. It does not determine what the website is about or what other technologies the project should use.
 

@@ -10,7 +10,8 @@
 
 <section class="terminal" aria-label="Markup++ command example">
   <div class="terminal-bar"><span></span><span></span><span></span><b>terminal</b></div>
-  <pre><code>$ markup README.md -o README.html
+  <pre><code>$ curl -fsSL https://nift-dev.github.io/markup-website/install | sh
+$ markup README.md -o README.html
 # or stream a fragment
 $ markup README.md &gt; fragment.html</code></pre>
 </section>
@@ -30,4 +31,4 @@ markup::convert(
     source, html, error);</code></pre></div>
 </section>
 
-<section class="status-strip"><strong>Development checkpoint 0.1.0</strong><span>CommonMark 0.31.2 compliant</span><span>Asciidoctor core 2.0.26 profile passed</span><span>Docutils 0.23 core profile passed</span></section>
+<section class="status-strip"><strong>Release candidate 0.1.0</strong><span>CommonMark 0.31.2 compliant</span><span>Asciidoctor core 2.0.26 profile passed</span><span>Docutils 0.23 core profile passed</span></section>

@@ -1,8 +1,15 @@
 <section class="page-hero"><p class="eyebrow">DOCUMENTATION</p><h1>Convert your first document.</h1><p>Build with C++17 and C99 compilers, then send HTML to stdout or an explicit output file.</p></section>
 
 <div class="docs-layout">
-  <aside><strong>On this page</strong><a href="#build">Build</a><a href="#cli">CLI</a><a href="#library">Library API</a><a href="#safety">Safety</a></aside>
+  <aside><strong>On this page</strong><a href="#install">Install</a><a href="#build">Build</a><a href="#cli">CLI</a><a href="#library">Library API</a><a href="#safety">Safety</a></aside>
   <article class="prose">
+    <h2 id="install">Install</h2>
+    <pre><code>curl -fsSL https://nift-dev.github.io/markup-website/install | sh</code></pre>
+    <p>The installer downloads the latest official release for Linux x86-64 or macOS arm64/x86-64, verifies the archive against the release's <code>SHA256SUMS</code>, and installs <code>markup</code> to <code>~/.local/bin</code> without sudo. Use <code>MARKUP_INSTALL_DIR</code> for another directory or <code>MARKUP_VERSION</code> to pin a release. Windows x86-64 is available as a checksum-covered zip from <a href="https://github.com/nift-dev/markup/releases">GitHub releases</a>.</p>
+    <pre><code>curl -fsSL https://nift-dev.github.io/markup-website/download | sh
+curl -fsSL https://nift-dev.github.io/markup-website/update | sh
+curl -fsSL https://nift-dev.github.io/markup-website/uninstall | sh</code></pre>
+    <p>The download command saves a verified archive without installing it. Update reruns the canonical installer. Uninstall removes only the executable from the selected install directory.</p>
     <h2 id="build">Build</h2>
     <pre><code>git clone https://github.com/nift-dev/markup.git
 cd markup
