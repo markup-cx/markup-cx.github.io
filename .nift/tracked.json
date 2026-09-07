@@ -29,6 +29,13 @@
       "name": "roadmap",
       "title": "Roadmap - Markup++",
       "template": "templates/template.html"
+    },
+    {
+      "name": "sitemap",
+      "title": "Sitemap",
+      "template": "templates/asset.txt",
+      "content-ext": ".xml",
+      "output-ext": ".xml"
     }
   ]
 }

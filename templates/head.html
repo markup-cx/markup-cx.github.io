@@ -2,5 +2,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>$[title]</title>
 <meta name="description" content="Markup++ converts CommonMark and AsciiDoc to HTML through a small C++17 library and CLI, with reStructuredText planned.">
+@if(name != "/"){
+<link rel="canonical" href="https://markup.cx/$[name].html">
+<meta property="og:url" content="https://markup.cx/$[name].html">
+}
+@if(name == "/"){
+<link rel="canonical" href="https://markup.cx/">
+<meta property="og:url" content="https://markup.cx/">
+}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Markup++">
+<meta property="og:title" content="$[title]">
+<meta property="og:description" content="Markup++ converts CommonMark and AsciiDoc to HTML through a small C++17 library and CLI, with reStructuredText planned.">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <link rel="stylesheet" href="@pathto('public/assets/style.css')">
 <script src="@pathto('public/assets/site.js')" defer></script>

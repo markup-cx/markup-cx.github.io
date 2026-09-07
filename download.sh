@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-repo="${MARKUP_GITHUB_REPOSITORY:-nift-dev/markup}"; version="${MARKUP_VERSION:-}"; download_dir="${MARKUP_DOWNLOAD_DIR:-$PWD}"
+repo="${MARKUP_GITHUB_REPOSITORY:-markup-cx/markup}"; version="${MARKUP_VERSION:-}"; download_dir="${MARKUP_DOWNLOAD_DIR:-$PWD}"
 command -v curl >/dev/null 2>&1 || { echo "markup download: required command not found: curl" >&2; exit 1; }
 command -v mktemp >/dev/null 2>&1 || { echo "markup download: required command not found: mktemp" >&2; exit 1; }
 if [ -z "$version" ]; then

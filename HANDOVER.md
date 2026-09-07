@@ -30,7 +30,8 @@ Do not introduce Nift-specific machinery where ordinary web tooling is the clear
 
 ## Markup++ website identity
 
-- This is the public documentation site for **Markup++** (`nift-dev/markup`).
+- This is the public documentation site for **Markup++**
+  (`markup-cx/markup`); public domain `https://markup.cx`.
 - The editable source branch is `stage`; generated output in `public/` is a
   separate repository on `main`.
 - Commit generated `public/` first, then commit the source repository.
@@ -50,10 +51,15 @@ Do not introduce Nift-specific machinery where ordinary web tooling is the clear
   gradients or generic framework styling.
 - Build with the supplied/approved Nift binary and require `nift status` to
   report every tracked page current before committing.
-- Root `install`, `download`, `update` and `uninstall` files are copied
-  byte-for-byte from Markup++ `packaging/`. Commit their generated `public/`
+- Root `install.sh`, `download.sh`, `update.sh` and `uninstall.sh` files are
+  copied byte-for-byte from Markup++ `packaging/` and served as the `.sh`
+  endpoints below `https://markup.cx/`. Commit their generated `public/`
   copies first, deploy all four, and verify their live bytes before the
   standalone release rehearsal.
+- Syntax highlighting is the dependency-free `public/assets/site.js`
+  highlighter (same family as the Minify++ website): semantic `<pre><code
+  class="language-*">` blocks with token classes in `public/assets/style.css`.
+  Keep the token palette amber/neutral without introducing blue.
 
 ## Start here
 
@@ -340,3 +346,8 @@ Then read feature documentation only when the task requires it, for example:
 - integration with other application stacks.
 
 Prefer documented Nift behaviour and the existing project structure over guessing based on another website generator or framework.
+
+## Website metadata
+
+- Canonical link tags and Open Graph metadata are emitted from `templates/head.html` against the public domain.
+- `content/sitemap.xml` is a tracked Nift page listing every page URL under the canonical domain; rebuild and commit its `public/sitemap.xml` output with the site.

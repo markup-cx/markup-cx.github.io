@@ -8,19 +8,19 @@
 
 <section class="split-section">
   <div><p class="eyebrow">CURRENT BOUNDARY</p><h2>Implemented, not overstated.</h2></div>
-  <div><p>All 13 current alpha TCK inputs pass the reproducible AD11 gate with no exclusions. AC0-AC9 define the independent pinned Asciidoctor 2.0.26 core profile: the release gate compares normalized Markup++ output against the pinned 2.0.26 reference and fails on unexpected differences, and every reviewed difference is pinned by normalized-output hashes. The gate and its adversarial self-test passed Linux, macOS and Windows at commit <code>20cbefe</code> in Actions run <code>33964331360</code> (the earlier run <code>33938717946</code> at <code>ee0ec00</code> covers the earlier implementation). This is bounded compatibility, not drop-in compatibility with every extension.</p><pre><code>markup guide.adoc -o guide.html
+  <div><p>All 13 current alpha TCK inputs pass the reproducible AD11 gate with no exclusions. AC0-AC9 define the independent pinned Asciidoctor 2.0.26 core profile: the release gate compares normalized Markup++ output against the pinned 2.0.26 reference and fails on unexpected differences, and every reviewed difference is pinned by normalized-output hashes. The gate and its adversarial self-test passed Linux, macOS and Windows at commit <code>20cbefe</code> in Actions run <code>33964331360</code> (the earlier run <code>33938717946</code> at <code>ee0ec00</code> covers the earlier implementation). This is bounded compatibility, not drop-in compatibility with every extension.</p><pre><code class="language-bash">markup guide.adoc -o guide.html
 printf '= Guide\n' | markup --format asciidoc -</code></pre></div>
 </section>
 
 <section class="example-pair">
-  <div><p class="eyebrow">INPUT</p><pre><code>= Project guide
+  <div><p class="eyebrow">INPUT</p><pre><code class="language-asciidoc">= Project guide
 :project: Markup++
 
 == {project}
 
 * [x] Parse structure
 * [x] Complete AD6-AD11</code></pre></div>
-  <div><p class="eyebrow">OUTPUT</p><pre><code>&lt;div id="header"&gt;
+  <div><p class="eyebrow">OUTPUT</p><pre><code class="language-html">&lt;div id="header"&gt;
   &lt;h1&gt;Project guide&lt;/h1&gt;
 &lt;/div&gt;
 &lt;div class="sect1"&gt;

@@ -6,17 +6,17 @@
 </section>
 <section class="split-section">
   <div><p class="eyebrow">EXPLICIT EXTENSIONS</p><h2>Core stays predictable.</h2></div>
-  <div><p>Pipe tables, task-list checkboxes and strikethrough are useful, but they are not CommonMark core. Enable the legacy extension profile deliberately:</p><pre><code>markup --extensions notes.md -o notes.html</code></pre></div>
+  <div><p>Pipe tables, task-list checkboxes and strikethrough are useful, but they are not CommonMark core. Enable the legacy extension profile deliberately:</p><pre><code class="language-bash">markup --extensions notes.md -o notes.html</code></pre></div>
 </section>
 <section class="example-pair">
-  <div><p class="eyebrow">INPUT</p><pre><code># Release notes
+  <div><p class="eyebrow">INPUT</p><pre><code class="language-markdown"># Release notes
 
 Markup++ keeps **conversion** small.
 
 - CommonMark by default
 - fragment or standalone HTML
 - future Nift embedding</code></pre></div>
-  <div><p class="eyebrow">OUTPUT</p><pre><code>&lt;h1&gt;Release notes&lt;/h1&gt;
+  <div><p class="eyebrow">OUTPUT</p><pre><code class="language-html">&lt;h1&gt;Release notes&lt;/h1&gt;
 &lt;p&gt;Markup++ keeps &lt;strong&gt;conversion&lt;/strong&gt; small.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;CommonMark by default&lt;/li&gt;

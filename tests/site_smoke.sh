@@ -16,11 +16,20 @@ for page in index docs markdown asciidoc restructuredtext roadmap; do
     grep -F 'href="./roadmap.html"' "public/$page.html" >/dev/null
 done
 
-for script in install download update uninstall; do
+for script in install.sh download.sh update.sh uninstall.sh; do
     test -s "$script"
+    test -s "public/$script"
     cmp "$script" "public/$script"
     sh -n "$script"
 done
+
+grep -F 'curl -fsSL https://markup.cx/install.sh | sh' public/docs.html >/dev/null
+grep -F 'curl -fsSL https://markup.cx/install.sh | sh' public/index.html >/dev/null
+grep -F 'https://github.com/markup-cx/markup' public/index.html >/dev/null
+grep -F 'https://github.com/markup-cx/markup.git' public/docs.html >/dev/null
+grep -F 'rel="canonical" href="https://markup.cx/' public/index.html >/dev/null
+grep -F 'rel="canonical" href="https://markup.cx/markdown.html"' public/markdown.html >/dev/null
+grep -F 'og:site_name' public/index.html >/dev/null
 
 grep -F 'markup README.md -o README.html' public/index.html >/dev/null
 grep -F '652/652' public/markdown.html >/dev/null
@@ -36,6 +45,16 @@ grep -F 'AsciiDoc' public/roadmap.html >/dev/null
 grep -F 'reStructuredText' public/roadmap.html >/dev/null
 grep -F 'Nift embedding' public/roadmap.html >/dev/null
 
+grep -F 'language-bash' public/docs.html >/dev/null
+grep -F 'language-cpp' public/docs.html >/dev/null
+grep -F 'language-markdown' public/markdown.html >/dev/null
+grep -F 'language-html' public/markdown.html >/dev/null
+grep -F 'language-asciidoc' public/asciidoc.html >/dev/null
+grep -F 'language-bash' public/restructuredtext.html >/dev/null
+grep -F '.kw{' public/assets/style.css >/dev/null
+grep -F '.str{' public/assets/style.css >/dev/null
+grep -F 'language-' public/assets/site.js >/dev/null
+
 if find content -type f \( -name '*.css' -o -name '*.js' \) | grep -q .; then
     echo 'static CSS/JS must not be duplicated under content/' >&2
     exit 1
@@ -48,5 +67,12 @@ if grep -R -E '#[0-9a-fA-F]{3,8}.*#[0-9a-fA-F]{3,8}' public/assets/style.css | g
     echo 'review palette: possible blue introduced' >&2
     exit 1
 fi
+if grep -rF --include='*.html' 'nift-dev' public >/dev/null; then
+    echo 'obsolete nift-dev operational URL found in generated site' >&2
+    exit 1
+fi
+
+grep -F '<link rel="sitemap"' public/index.html >/dev/null
+test -s public/sitemap.xml
 
 echo 'website smoke checks passed'

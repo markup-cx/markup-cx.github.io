@@ -4,21 +4,21 @@
   <aside><strong>On this page</strong><a href="#install">Install</a><a href="#build">Build</a><a href="#cli">CLI</a><a href="#library">Library API</a><a href="#safety">Safety</a></aside>
   <article class="prose">
     <h2 id="install">Install</h2>
-    <pre><code>curl -fsSL https://nift-dev.github.io/markup-website/install | sh</code></pre>
-    <p>The installer downloads the latest official release for Linux x86-64 or macOS arm64/x86-64, verifies the archive against the release's <code>SHA256SUMS</code>, and installs <code>markup</code> to <code>~/.local/bin</code> without sudo. Use <code>MARKUP_INSTALL_DIR</code> for another directory or <code>MARKUP_VERSION</code> to pin a release. Windows x86-64 is available as a checksum-covered zip from <a href="https://github.com/nift-dev/markup/releases">GitHub releases</a>.</p>
-    <pre><code>curl -fsSL https://nift-dev.github.io/markup-website/download | sh
-curl -fsSL https://nift-dev.github.io/markup-website/update | sh
-curl -fsSL https://nift-dev.github.io/markup-website/uninstall | sh</code></pre>
+    <pre><code class="language-bash">curl -fsSL https://markup.cx/install.sh | sh</code></pre>
+    <p>The installer downloads the latest official release for Linux x86-64 or macOS arm64/x86-64, verifies the archive against the release's <code>SHA256SUMS</code>, and installs <code>markup</code> to <code>~/.local/bin</code> without sudo. Use <code>MARKUP_INSTALL_DIR</code> for another directory or <code>MARKUP_VERSION</code> to pin a release. You can inspect the script before running it, and the release archive is checksum-verified against the release's <code>SHA256SUMS</code>. Windows x86-64 is available as a checksum-covered zip from <a href="https://github.com/markup-cx/markup/releases">GitHub releases</a>.</p>
+    <pre><code class="language-bash">curl -fsSL https://markup.cx/download.sh | sh
+curl -fsSL https://markup.cx/update.sh | sh
+curl -fsSL https://markup.cx/uninstall.sh | sh</code></pre>
     <p>The download command saves a verified archive without installing it. Update reruns the canonical installer. Uninstall removes only the executable from the selected install directory.</p>
     <h2 id="build">Build</h2>
-    <pre><code>git clone https://github.com/nift-dev/markup.git
+    <pre><code class="language-bash">git clone https://github.com/markup-cx/markup.git
 cd markup
 make
 make test</code></pre>
     <p>The build requires C++17 and C99 compilers plus Make. The resulting executable is <code>markup</code>; the CommonMark engine is built from vendored source rather than a system library.</p>
 
     <h2 id="cli">CLI</h2>
-    <pre><code>markup README.md
+    <pre><code class="language-bash">markup README.md
 markup README.md -o README.html
 markup --standalone --title "Project notes" notes.md -o notes.html
 markup --extensions README.md -o extended.html
@@ -28,7 +28,7 @@ printf '# Hello\n' | markup --format markdown -</code></pre>
     <p>Output is an HTML fragment. Markdown uses CommonMark by default; <code>.adoc</code>/<code>.asciidoc</code> select AsciiDoc and <code>.rst</code> selects reStructuredText. Use <code>--extensions</code> for legacy Markdown tables, task lists and strikethrough, or <code>--standalone</code> for a minimal HTML5 document. Input from stdin requires <code>--format</code>.</p>
 
     <h2 id="library">Library API</h2>
-    <pre><code>#include &lt;markup/Markup.h&gt;
+    <pre><code class="language-cpp">#include &lt;markup/Markup.h&gt;
 
 std::string html;
 std::string error;
@@ -44,6 +44,6 @@ bool ok = markup::convert(
 
     <h2 id="safety">Raw HTML and safe mode</h2>
     <p>Raw HTML passes through by default, as CommonMark specifies. <code>--safe</code> prevents raw HTML pass-through and rejects active URL schemes. It is a conservative rendering option, not a complete sanitizer for hostile content.</p>
-    <pre><code>markup --safe comments.md -o comments.html</code></pre>
+    <pre><code class="language-bash">markup --safe comments.md -o comments.html</code></pre>
   </article>
 </div>

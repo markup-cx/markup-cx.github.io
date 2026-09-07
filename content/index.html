@@ -4,13 +4,13 @@
   <p class="lede">Markup++ is a self-contained C++17 library and CLI for converting Markdown, AsciiDoc and reStructuredText to HTML. Its versioned CommonMark profile and the Asciidoctor-core and Docutils-core output gates (with hash-pinned differences) have all passed the Linux, macOS and Windows release gates.</p>
   <div class="actions">
     <a class="button primary" href="@pathto('docs')">Get started</a>
-    <a class="button" href="https://github.com/nift-dev/markup">View source</a>
+    <a class="button" href="https://github.com/markup-cx/markup">View source</a>
   </div>
 </section>
 
 <section class="terminal" aria-label="Markup++ command example">
   <div class="terminal-bar"><span></span><span></span><span></span><b>terminal</b></div>
-  <pre><code>$ curl -fsSL https://nift-dev.github.io/markup-website/install | sh
+  <pre><code class="language-bash">$ curl -fsSL https://markup.cx/install.sh | sh
 $ markup README.md -o README.html
 # or stream a fragment
 $ markup README.md &gt; fragment.html</code></pre>
@@ -25,7 +25,7 @@ $ markup README.md &gt; fragment.html</code></pre>
 
 <section class="split-section">
   <div><p class="eyebrow">LIBRARY FIRST</p><h2>A clean boundary for tools.</h2></div>
-  <div><p>Markup++ does not know about project graphs, templates or files. Give it markup and a format; receive HTML or a controlled error.</p><pre><code>std::string html, error;
+  <div><p>Markup++ does not know about project graphs, templates or files. Give it markup and a format; receive HTML or a controlled error.</p><pre><code class="language-cpp">std::string html, error;
 markup::convert(
     markup::Format::Markdown,
     source, html, error);</code></pre></div>

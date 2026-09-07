@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-repo="${MARKUP_GITHUB_REPOSITORY:-nift-dev/markup}"
+repo="${MARKUP_GITHUB_REPOSITORY:-markup-cx/markup}"
 install_dir="${MARKUP_INSTALL_DIR:-$HOME/.local/bin}"
 version="${MARKUP_VERSION:-}"
 need() { command -v "$1" >/dev/null 2>&1 || { echo "markup installer: required command not found: $1" >&2; exit 1; }; }
