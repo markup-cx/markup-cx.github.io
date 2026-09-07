@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Markup++</title>
+		<meta name="description" content="Markup++ converts Markdown, AsciiDoc and reStructuredText to HTML through a small C++17 library and CLI.">
+		<link rel="canonical" href="https://markup.cx/docs/battle-tested.html">
+		<meta property="og:url" content="https://markup.cx/docs/battle-tested.html">
+		
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="Markup++">
+		<meta property="og:title" content="Markup++">
+		<meta property="og:description" content="Markup++ converts Markdown, AsciiDoc and reStructuredText to HTML through a small C++17 library and CLI.">
+		<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+		<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+		<link rel="stylesheet" href="../assets/style.css">
+		<script src="../assets/site.js" defer></script>
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Skip to content</a>
+		<header class="site-header">
+			<a class="brand" href="../"><span class="mark">M++</span><span>Markup++</span></a>
+			<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+			<nav id="site-nav" aria-label="Primary">
+				<a href="../docs.html">Docs</a>
+				<a href="../markdown.html">Markdown</a>
+				<a href="../asciidoc.html">AsciiDoc</a>
+				<a href="../restructuredtext.html">reStructuredText</a>
+				<a href="./battle-tested.html">Battle tested</a>
+				<a href="./ai-opinion.html">AI opinion</a>
+				<a href="https://github.com/markup-cx/markup">GitHub</a>
+			</nav>
+		</header>
+		<main id="main"><section class="page-hero"><p class="eyebrow">EVIDENCE</p><h1>Three formats, each held to an explicit contract.</h1><p>Markup++ does not treat a successful conversion as proof of compatibility. Each format has an independent reference profile, adversarial cases and cross-platform release gates.</p></section>
+                  
+                  <section class="support-grid">
+                    <article><h2>CommonMark</h2><p><strong>652/652</strong> official CommonMark 0.31.2 examples pass. Pathological-input, extension and output-safety checks sit beside the specification suite.</p></article>
+                    <article><h2>AsciiDoc</h2><p>AD0–AD11 and AC0–AC9 cover the pinned Eclipse language/TCK development snapshot and the bounded Asciidoctor 2.0.26 core profile.</p></article>
+                    <article><h2>reStructuredText</h2><p>RST0–RST14 exercise the bounded Docutils 0.23 core profile, including blocks, references, roles, directives, resources and diagnostics.</p></article>
+                  </section>
+                  
+                  <section class="split-section">
+                    <div><p class="eyebrow">RELEASE GATES</p><h2>Evidence that travels with the code.</h2></div>
+                    <div><p>The maintained suites run on Linux, macOS and Windows. Sanitizer builds, CLI failure cases, atomic output behavior and a difference-gate self-test cover the implementation around the external compatibility profiles.</p><pre><code class="language-bash">make test-release-local
+make test-sanitize
+make test-packaging</code></pre></div>
+                  </section>
+                  
+                  <section class="support-grid">
+                    <article><h2>Reviewed differences</h2><p>Compatibility differences are hash-pinned with reasons. A changed or unexpected difference fails the gate rather than being silently accepted.</p></article>
+                    <article><h2>Safe embedding</h2><p>The public conversion API performs no ambient file IO. Includes require host resolvers with canonical dependency identities, and Nift verifies a 41-file synchronized subtree.</p></article>
+                    <article><h2>Honest boundaries</h2><p>CommonMark is a standards-conformance claim. The AsciiDoc and reStructuredText results are bounded compatibility profiles, not claims of complete Asciidoctor, Docutils or Sphinx equivalence.</p></article>
+                  </section></main>
+		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
+	</body>
+</html>
