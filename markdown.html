@@ -5,6 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Markdown support - Markup++</title>
 		<meta name="description" content="Markup++ converts CommonMark and AsciiDoc to HTML through a small C++17 library and CLI, with reStructuredText planned.">
+		<link rel="canonical" href="https://markup.cx/markdown.html">
+		<meta property="og:url" content="https://markup.cx/markdown.html">
+		
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="Markup++">
+		<meta property="og:title" content="Markdown support - Markup++">
+		<meta property="og:description" content="Markup++ converts CommonMark and AsciiDoc to HTML through a small C++17 library and CLI, with reStructuredText planned.">
+		<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 		<link rel="stylesheet" href="assets/style.css">
 		<script src="assets/site.js" defer></script>
 	</head>
@@ -19,7 +27,7 @@
 				<a href="./asciidoc.html">AsciiDoc</a>
 				<a href="./restructuredtext.html">reStructuredText</a>
 				<a href="./roadmap.html">Roadmap</a>
-				<a href="https://github.com/nift-dev/markup">GitHub</a>
+				<a href="https://github.com/markup-cx/markup">GitHub</a>
 			</nav>
 		</header>
 		<main id="main"><section class="page-hero"><p class="eyebrow">FORMAT 01</p><h1>CommonMark, measured.</h1><p>Markdown defaults to the CommonMark 0.31.2 profile. The pinned official corpus passes 652/652 through the same public API on Linux, macOS and Windows.</p></section>
@@ -30,17 +38,17 @@
                   </section>
                   <section class="split-section">
                     <div><p class="eyebrow">EXPLICIT EXTENSIONS</p><h2>Core stays predictable.</h2></div>
-                    <div><p>Pipe tables, task-list checkboxes and strikethrough are useful, but they are not CommonMark core. Enable the legacy extension profile deliberately:</p><pre><code>markup --extensions notes.md -o notes.html</code></pre></div>
+                    <div><p>Pipe tables, task-list checkboxes and strikethrough are useful, but they are not CommonMark core. Enable the legacy extension profile deliberately:</p><pre><code class="language-bash">markup --extensions notes.md -o notes.html</code></pre></div>
                   </section>
                   <section class="example-pair">
-                    <div><p class="eyebrow">INPUT</p><pre><code># Release notes
+                    <div><p class="eyebrow">INPUT</p><pre><code class="language-markdown"># Release notes
 
 Markup++ keeps **conversion** small.
 
 - CommonMark by default
 - fragment or standalone HTML
 - future Nift embedding</code></pre></div>
-                    <div><p class="eyebrow">OUTPUT</p><pre><code>&lt;h1&gt;Release notes&lt;/h1&gt;
+                    <div><p class="eyebrow">OUTPUT</p><pre><code class="language-html">&lt;h1&gt;Release notes&lt;/h1&gt;
 &lt;p&gt;Markup++ keeps &lt;strong&gt;conversion&lt;/strong&gt; small.&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;CommonMark by default&lt;/li&gt;

@@ -105,3 +105,13 @@ footer { display: flex; justify-content: space-between; gap: 1rem; padding: 2rem
   .timeline b { grid-column: 2; }
   footer { flex-direction: column; }
 }
+
+pre { position: relative; padding-right: 3rem; }
+pre code { white-space: pre; overflow-x: auto; }
+.copy { position: absolute; right: 9px; top: 9px; width: 33px; height: 33px; background: #202720; color: white; border: 1px solid #4a554c; border-radius: 6px; font-size: 0; cursor: pointer; }
+.copy:after { content: '\29c9'; font-size: 18px; }
+.copy.ok:after { content: '\2713'; color: #7fe0be; }
+.kw{color:#ff9a70}
+.str{color:#bce88e}
+.num{color:#8fd4ff}
+.com{color:#7b897f}.cmd{color:#bce88e;font-weight:700}.key{color:#ffb88a}.pre{color:#c7a7ff}.tag{color:#8fd4ff}.attr{color:#ffb88a}

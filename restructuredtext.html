@@ -5,6 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>reStructuredText support - Markup++</title>
 		<meta name="description" content="Markup++ converts CommonMark and AsciiDoc to HTML through a small C++17 library and CLI, with reStructuredText planned.">
+		<link rel="canonical" href="https://markup.cx/restructuredtext.html">
+		<meta property="og:url" content="https://markup.cx/restructuredtext.html">
+		
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="Markup++">
+		<meta property="og:title" content="reStructuredText support - Markup++">
+		<meta property="og:description" content="Markup++ converts CommonMark and AsciiDoc to HTML through a small C++17 library and CLI, with reStructuredText planned.">
+		<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 		<link rel="stylesheet" href="assets/style.css">
 		<script src="assets/site.js" defer></script>
 	</head>
@@ -19,7 +27,7 @@
 				<a href="./asciidoc.html">AsciiDoc</a>
 				<a href="./restructuredtext.html">reStructuredText</a>
 				<a href="./roadmap.html">Roadmap</a>
-				<a href="https://github.com/nift-dev/markup">GitHub</a>
+				<a href="https://github.com/markup-cx/markup">GitHub</a>
 			</nav>
 		</header>
 		<main id="main"><section class="page-hero"><p class="eyebrow">FORMAT 03</p><h1>reStructuredText, deliberately bounded.</h1><p>RST0-RST14 implement the documented reStructuredText and Docutils 0.23 core-parser profile, validated by a normalized-output gate with every reviewed difference pinned by hashes. The gate and its adversarial self-test passed Linux, macOS and Windows at commit <code>20cbefe</code> in Actions run <code>33964331360</code> (the earlier run <code>33938717946</code> at <code>ee0ec00</code> covers the earlier implementation). Sphinx and application extensions remain outside the claim.</p></section>
@@ -32,7 +40,7 @@
                   
                   <section class="split-section">
                     <div><p class="eyebrow">PINNED PROFILE</p><h2>Docutils 0.23, measured honestly.</h2></div>
-                    <div><p>The frozen oracle uses the standalone reader, reStructuredText parser and HTML5 writer with raw and file insertion disabled. Twenty-four reference cases retain doctree, fragment and diagnostic evidence. The release gate compares normalized Markup++ output against the pinned fragment and fails on unexpected differences; recorded differences are reviewed with reasons. Sphinx extensions are outside this profile.</p><pre><code>markup manual.rst -o manual.html
+                    <div><p>The frozen oracle uses the standalone reader, reStructuredText parser and HTML5 writer with raw and file insertion disabled. Twenty-four reference cases retain doctree, fragment and diagnostic evidence. The release gate compares normalized Markup++ output against the pinned fragment and fails on unexpected differences; recorded differences are reviewed with reasons. Sphinx extensions are outside this profile.</p><pre><code class="language-bash">markup manual.rst -o manual.html
 printf 'Heading\n=======\n' | markup --format rst -</code></pre></div>
                   </section></main>
 		<footer><span>Markup++</span><span>Small native conversion for the Gantry ecosystem.</span></footer>
