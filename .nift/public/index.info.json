@@ -18,12 +18,12 @@
   ],
   "reqs": [
     "public/asciidoc.html",
+    "public/assets/favicon.svg",
     "public/assets/site.js",
     "public/assets/style.css",
     "public/docs.html",
     "public/docs/ai-opinion.html",
     "public/docs/battle-tested.html",
-    "public/favicon.svg",
     "public/index.html",
     "public/markdown.html",
     "public/restructuredtext.html"

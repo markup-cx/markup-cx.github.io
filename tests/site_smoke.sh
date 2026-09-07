@@ -51,7 +51,8 @@ grep -F 'markup manual.rst -o manual.html' public/restructuredtext.html >/dev/nu
 grep -F '652/652' public/docs/battle-tested.html >/dev/null
 grep -F 'A strong first release.' public/docs/ai-opinion.html >/dev/null
 test ! -e public/roadmap.html
-test -s public/favicon.svg
+test -s public/assets/favicon.svg
+test ! -e public/favicon.svg
 
 grep -F 'language-bash' public/docs.html >/dev/null
 grep -F 'language-cpp' public/docs.html >/dev/null
