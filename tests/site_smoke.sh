@@ -73,6 +73,11 @@ if grep -rF --include='*.html' 'nift-dev' public >/dev/null; then
 fi
 
 grep -F '<link rel="sitemap"' public/index.html >/dev/null
+if grep -F 'Release candidate 0.1.0' public/index.html >/dev/null; then
+    echo 'stale release candidate phrase on homepage' >&2
+    exit 1
+fi
+grep -F 'Latest release 0.1.0' public/index.html >/dev/null
 test -s public/sitemap.xml
 
 echo 'website smoke checks passed'
