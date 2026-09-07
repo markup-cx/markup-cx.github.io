@@ -4,16 +4,19 @@ set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
 
-for page in index docs markdown asciidoc restructuredtext roadmap; do
+for page in index docs markdown asciidoc restructuredtext docs/battle-tested docs/ai-opinion; do
     test -s "public/$page.html"
     grep -F '<meta name="viewport"' "public/$page.html" >/dev/null
     grep -F 'assets/style.css' "public/$page.html" >/dev/null
     grep -F 'assets/site.js' "public/$page.html" >/dev/null
-    grep -F 'href="./docs.html"' "public/$page.html" >/dev/null
-    grep -F 'href="./markdown.html"' "public/$page.html" >/dev/null
-    grep -F 'href="./asciidoc.html"' "public/$page.html" >/dev/null
-    grep -F 'href="./restructuredtext.html"' "public/$page.html" >/dev/null
-    grep -F 'href="./roadmap.html"' "public/$page.html" >/dev/null
+    grep -F '>Docs</a>' "public/$page.html" >/dev/null
+    grep -F '>Markdown</a>' "public/$page.html" >/dev/null
+    grep -F '>AsciiDoc</a>' "public/$page.html" >/dev/null
+    grep -F '>reStructuredText</a>' "public/$page.html" >/dev/null
+    grep -F '>Battle tested</a>' "public/$page.html" >/dev/null
+    grep -F '>AI opinion</a>' "public/$page.html" >/dev/null
+    grep -F '<title>Markup++</title>' "public/$page.html" >/dev/null
+    grep -F 'rel="icon" type="image/svg+xml"' "public/$page.html" >/dev/null
 done
 
 for script in install.sh download.sh update.sh uninstall.sh; do
@@ -31,7 +34,11 @@ grep -F 'rel="canonical" href="https://markup.cx/' public/index.html >/dev/null
 grep -F 'rel="canonical" href="https://markup.cx/markdown.html"' public/markdown.html >/dev/null
 grep -F 'og:site_name' public/index.html >/dev/null
 
-grep -F 'markup README.md -o README.html' public/index.html >/dev/null
+test "$(grep -oF 'curl -fsSL https://markup.cx/install.sh | sh' public/index.html | wc -l)" -eq 1
+if grep -F '$ markup README.md' public/index.html >/dev/null; then
+    echo 'homepage install block must contain only the install command' >&2
+    exit 1
+fi
 grep -F '652/652' public/markdown.html >/dev/null
 grep -F 'markup --extensions' public/markdown.html >/dev/null
 grep -F 'Docutils 0.23 core profile passed' public/index.html >/dev/null
@@ -41,9 +48,10 @@ grep -F 'explicit host resolver' public/docs.html >/dev/null
 grep -F 'markup guide.adoc -o guide.html' public/asciidoc.html >/dev/null
 grep -F 'Docutils 0.23' public/restructuredtext.html >/dev/null
 grep -F 'markup manual.rst -o manual.html' public/restructuredtext.html >/dev/null
-grep -F 'AsciiDoc' public/roadmap.html >/dev/null
-grep -F 'reStructuredText' public/roadmap.html >/dev/null
-grep -F 'Nift embedding' public/roadmap.html >/dev/null
+grep -F '652/652' public/docs/battle-tested.html >/dev/null
+grep -F 'A strong first release.' public/docs/ai-opinion.html >/dev/null
+test ! -e public/roadmap.html
+test -s public/favicon.svg
 
 grep -F 'language-bash' public/docs.html >/dev/null
 grep -F 'language-cpp' public/docs.html >/dev/null

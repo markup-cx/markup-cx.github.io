@@ -26,8 +26,13 @@
       "template": "templates/template.html"
     },
     {
-      "name": "roadmap",
-      "title": "Roadmap - Markup++",
+      "name": "docs/battle-tested",
+      "title": "Battle tested",
+      "template": "templates/template.html"
+    },
+    {
+      "name": "docs/ai-opinion",
+      "title": "AI opinion",
       "template": "templates/template.html"
     },
     {

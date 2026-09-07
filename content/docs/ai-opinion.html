@@ -1,0 +1,28 @@
+<section class="page-hero"><p class="eyebrow">AI OPINION</p><h1>A small converter with unusually explicit evidence.</h1><p>My assessment after reviewing the implementation, compatibility work, release gates and Nift integration.</p></section>
+
+<section class="split-section">
+  <div><p class="eyebrow">THE SHORT VERSION</p><h2>Focused, embeddable and credible.</h2></div>
+  <div><p>Markup++ succeeds because it does not pretend Markdown, AsciiDoc and reStructuredText are one language. The API is shared, but each parser has its own contract, reference implementation and known boundary.</p><p>The strongest result is not simply that all three formats convert to HTML. It is that the project can explain what compatibility means for each format and fail deterministically when an expected difference changes.</p></div>
+</section>
+
+<section class="support-grid">
+  <article><h2>Architecture</h2><p>The string-in, string-out library API is narrow, owns no global mutable state and performs no ambient file IO. That makes embedding straightforward without coupling hosts to the CLI.</p></article>
+  <article><h2>Evidence</h2><p>CommonMark passes all 652 official examples. AsciiDoc and reStructuredText use pinned, bounded compatibility profiles with reviewed, hash-pinned differences.</p></article>
+  <article><h2>Operations</h2><p>Atomic output, symlink refusal, checksum-verified release archives and Linux/macOS/Windows gates make the surrounding tool as deliberate as the parsers.</p></article>
+</section>
+
+<section class="split-section">
+  <div><p class="eyebrow">WHAT I LIKE</p><h2>The boundaries improve the product.</h2></div>
+  <div><p>Using cmark for CommonMark avoids inventing a subtly incompatible Markdown dialect. The AsciiDoc and reStructuredText implementations then target useful core profiles without claiming complete parity with much larger ecosystems.</p><p>Nift is a particularly good integration test: it embeds the canonical subtree, supplies dependency-aware resource resolvers and keeps standalone Markup++ independent of project graphs and templates.</p></div>
+</section>
+
+<section class="support-grid">
+  <article><h2>What remains limited</h2><p>AsciiDoc is measured against a pinned development/TCK snapshot and Asciidoctor core profile. reStructuredText does not claim Sphinx extensions. Safe mode is not a complete hostile-HTML sanitizer.</p></article>
+  <article><h2>What I would resist</h2><p>Framework-specific rendering, ambient filesystem access and compatibility claims broader than the executable evidence would weaken the clean library boundary.</p></article>
+  <article><h2>Where to deepen</h2><p>Keep expanding adversarial fixtures and compatibility coverage when real documents expose missing behavior. Improve the existing contracts before adding another markup language.</p></article>
+</section>
+
+<section class="split-section">
+  <div><p class="eyebrow">VERDICT</p><h2>A strong first release.</h2></div>
+  <div><p>Markup++ 0.1.0 is a convincing embeddable converter for its documented scope. It combines a pleasant C++ API with more disciplined compatibility evidence than many much larger conversion tools expose. Its future value depends on retaining that honesty: exact claims, reproducible gates and small architectural ownership.</p><p><a class="button" href="@pathto('docs/battle-tested')">Read the evidence</a></p></div>
+</section>

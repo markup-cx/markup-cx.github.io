@@ -1,9 +1,9 @@
 {
-  "name": "markdown",
-  "title": "Markdown support - Markup++",
+  "name": "docs/ai-opinion",
+  "title": "AI opinion",
   "template": "templates/template.html",
-  "content": "content/markdown.html",
-  "output": "public/markdown.html",
+  "content": "content/docs/ai-opinion.html",
+  "output": "public/docs/ai-opinion.html",
   "minify": false,
   "minify-version": 0,
   "pagination": false,
@@ -12,7 +12,7 @@
   "pagination-separator": "",
   "pagination-pages": 0,
   "dependencies": [
-    "content/markdown.html",
+    "content/docs/ai-opinion.html",
     "templates/head.html",
     "templates/template.html"
   ],
